@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive Page</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+
+            button {
+                background-color: #27ae60;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            #message {
+                margin-top: 20px;
+                font-size: 20px;
+                color: #2c3e50;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My first interactive page</h1>
+        <button onclick="showMessage()">Click me</button>
+        <p id="message"></p>
+
+        <button onclick="changecolor()">Change Color</button>
+
+        <h2>Simple todo</h2>
+        <input type="text" id="taskInput" placeholder="Enter your task">
+        <button onclick="addToDo()">Add task</button>
+        <ul id="taskList"></ul>
+
+        <script>
+            function showMessage() {
+                if(document.getElementById("message").innerText == "You clicked the button!"){
+                    document.getElementById("message").innerText = "";
+                }
+                else{
+                    document.getElementById("message").innerText="You clicked the button!";
+                }                
+            }
+            function changecolor(){
+                document.body.style.backgroundColor="cyan";
+            }
+            function addToDo(){
+                let task = document.getElementById("taskInput").value;
+                let list = document.getElementById("taskList");
+                let item = document.createElement("li");
+                item.innerText = task;
+                item.onclick = function() {
+                    item.style.textDecoration = "line-through";
+                };
+                list.appendChild(item);
+                document.getElementById("taskInput").value = "";
+            }
+            
+        </script>
+    </body>
+</html>
