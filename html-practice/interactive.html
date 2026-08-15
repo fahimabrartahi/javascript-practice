@@ -39,6 +39,22 @@
         <ul id="taskList"></ul>
 
         <script>
+            let tasks = JSON.parse(localStorage.getItem("savedTasks")) || [];
+
+            function loadTasks() {
+                let list = document.getElementById("taskList");
+                for (let i = 0; i < tasks.length; i++) {
+                    let item = document.createElement("li");
+                    item.innerText = tasks[i];
+                    item.onclick = function() {
+                        item.style.textDecoration = "line-through";
+                    };
+                    list.appendChild(item);
+                }
+            }
+            loadTasks();
+
+
             function showMessage() {
                 if(document.getElementById("message").innerText == "You clicked the button!"){
                     document.getElementById("message").innerText = "";
@@ -50,11 +66,14 @@
             function changecolor(){
                 document.body.style.backgroundColor="cyan";
             }
-            function addToDo(){
+
+            function addToDo() {
                 let task = document.getElementById("taskInput").value;
                 let list = document.getElementById("taskList");
                 let item = document.createElement("li");
                 item.innerText = task;
+                tasks.push(task);
+                localStorage.setItem("savedTasks", JSON.stringify(tasks));
                 item.onclick = function() {
                     item.style.textDecoration = "line-through";
                 };
