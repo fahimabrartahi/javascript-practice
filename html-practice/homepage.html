@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Homepage</title>
+        <style>
+            body{
+                background-color: azure;
+                color: #1d1d29;
+                max-width: 600px;
+                padding: 0px 20px;
+                margin: 20px auto;
+            }
+            nav{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                margin-bottom: 5px;
+                border-bottom: 1px solid #1a1c36;
+            }
+            .theme{
+                background-color: beige;
+                border-radius: 10px;
+            }
+            .theme:hover{
+                background-color: aliceblue;
+            }
+            h3{
+                color: #27ae60;
+            }
+            h4{
+                color: #27ae60;
+            }
+        </style>
+    </head>
+    <body>  
+        <nav>
+            <span style="font-size: 24px">Fahim Abrar</span>
+            <span href="#skills">Skills</span>
+            <span href="#projects">Projects</span>
+            <span href="#contacts">Contacts</span>
+            <span><button class="theme" onclick="changeTheme()">Change Theme</button></span>
+        </nav>
+        
+        <!--hero section-->
+        <h2>Hi, I'm Fahim Abrar</h2>
+        <p>Aspiring Developer<br>Mechanical Engineering Undergrade Student<br></p>
+        <p>Goal: Learning programming alongside mechanical engineering major to increase the job field and follow my passion</p>
+
+        <!--skilles-->
+        <h3 id="skills">Here's some of my mentionable skills</h3>
+        <ul>
+            <li>C</li>
+            <li>python</li>
+            <li>javascript(learning in progress)</li>
+            <li>HTML and CSS(reviewing)</li>
+        </ul>
+
+        <!--projects-->
+        <h3 id="projects">Projects</h3>
+        <ol>
+            <li>
+                <P>Grade tracker:</P>
+                <a href="https://github.com/fahimabrartahi/javascript-practice/blob/main/Grade%20tracker/grade-tracker.js">View project</a>
+            </li>
+        </ol>
+
+        <!--contacts-->
+        <h4 id="contacts">Here's how you can connect with me</h4>
+        <p>(Feel free to share, correct any code or connect with me)</p>
+        <a href="mailto:fahim.abrar.mail@gmail.com">Mail</a><br>
+        <a href="https://github.com/fahimabrartahi">GitHub</a>
+
+        <!--javascript-->
+        <script>
+            function changeTheme(){
+                if(document.body.style.backgroundColor == "azure"){
+                    document.body.style.backgroundColor = "#1d1d29";
+                    document.body.style.color = "azure";
+                }
+                else{
+                    document.body.style.backgroundColor = "azure";
+                    document.body.style.color = "#1d1d29";
+                }
+            }
+        </script>
+    </body>
+</html>
