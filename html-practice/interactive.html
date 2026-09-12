@@ -39,6 +39,19 @@
         <ul id="taskList"></ul>
 
         <script>
+            function showMessage() {
+                if(document.getElementById("message").innerText == "You clicked the button!"){
+                    document.getElementById("message").innerText = "";
+                }
+                else{
+                    document.getElementById("message").innerText="You clicked the button!";
+                }                
+            }
+            function changecolor(){
+                document.body.style.backgroundColor="cyan";
+            }
+
+            
             let tasks = JSON.parse(localStorage.getItem("savedTasks")) || [];
 
             function loadTasks() {
@@ -53,19 +66,6 @@
                 }
             }
             loadTasks();
-
-
-            function showMessage() {
-                if(document.getElementById("message").innerText == "You clicked the button!"){
-                    document.getElementById("message").innerText = "";
-                }
-                else{
-                    document.getElementById("message").innerText="You clicked the button!";
-                }                
-            }
-            function changecolor(){
-                document.body.style.backgroundColor="cyan";
-            }
 
             function addToDo() {
                 let task = document.getElementById("taskInput").value;

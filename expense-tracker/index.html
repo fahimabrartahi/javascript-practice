@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense tracker</title>
+        <link rel="stylesheet" href="styles.css">
+    </head> 
+    <body>        
+        <header class="topbar">
+            <div class="logo">B</div>
+            <div>
+                <div class="title">Budget<span>Bot</span></div>
+                <div class="tagline">TRACK · SAVE · GROW</div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="vertical_line"></div>
+            <div>
+                <p class="toppart">Welcome to a </p>
+                <h1>Simple <span>expense tracker</span></h1>
+                <p class="bottompart">Built as a part of my javascript learning jurney ✨</p>
+            </div>
+        </section>
+        <section class="input">
+            <p class="input_text"><span class="input_icon">+</span>Input your expense here:</p>
+            <section class="form"><input placeholder="Expense name" id="expenseName" type="text"><input placeholder="Amount" id="amount" type="number"><button onclick="inputExpense()">➤ Submit</button></section>      
+            <div class="total">
+                <div class="total_icon">৳</div>
+                <div class="total_text"><p>Total</p>
+                <p><span id="total">0</span>BDT</p></div>
+            </div>
+        </section>
+        <section class="list">
+            <p class="list_title">All expenses:</p>
+            <ul id="expenseList"></ul>
+        </section>
+        <script src="app.js"></script>
+    </body>
+</html>
